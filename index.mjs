@@ -1,7 +1,10 @@
 //const express = require('express')
 import { faker } from "@faker-js/faker";
 import express from "express";
+import cors from "cors";
+
 const app = express();
+app.use(cors());
 
 function createAccount() {
   const nombre = faker.person.fullName();
@@ -31,5 +34,5 @@ app.get("/accounts", function (req, res) {
 });
 
 app.listen(3001, function () {
-  console.log("Funciona consumir datos de la API fake server");
+  console.log("Funciona consumir datos de la API fake server, Puerto 3001.");
 });
